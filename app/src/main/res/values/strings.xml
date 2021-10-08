@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DadJokeApp</string>
+    <string name="title_random">Get a joke</string>
+    <string name="title_starred">Starred jokes</string>
 </resources>

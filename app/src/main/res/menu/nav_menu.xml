@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/navigation_random"
+        android:title="@string/title_random"/>
+
+    <item android:id="@+id/navigation_starred"
+        android:title="@string/title_starred"/>
+</menu>
