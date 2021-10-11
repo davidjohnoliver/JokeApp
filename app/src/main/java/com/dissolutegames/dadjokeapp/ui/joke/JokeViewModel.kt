@@ -12,6 +12,8 @@ class JokeViewModel : ViewModel() {
         value = false
     }
 
+    private var _isInitialized: Boolean = false
+
     val isLoading: LiveData<Boolean> = _isLoading
 
     private val _jokeText = MutableLiveData<String>().apply {
@@ -20,6 +22,10 @@ class JokeViewModel : ViewModel() {
 
     val jokeText: LiveData<String> = _jokeText
     fun initialize(jokeId: String?) {
+        if (_isInitialized) {
+            return
+        }
+        _isInitialized = true
 
         viewModelScope.launch {
             _isLoading.apply {
