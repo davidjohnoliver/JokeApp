@@ -4,10 +4,13 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/dummy_text"
+        android:id="@+id/joke_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="100dp"
-        android:text="Individual joke - to be implemented" />
+        android:layout_margin="70dp"
+        android:layout_marginTop="120dp"
+        android:text="Joke example sample text"
+        android:textSize="36sp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
