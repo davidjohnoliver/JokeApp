@@ -19,8 +19,8 @@ class JokeViewModel : ViewModel() {
     }
 
     val jokeText: LiveData<String> = _jokeText
+    fun initialize(jokeId: String?) {
 
-    fun init(jokeId: String?) {
         viewModelScope.launch {
             _isLoading.apply {
                 value = true

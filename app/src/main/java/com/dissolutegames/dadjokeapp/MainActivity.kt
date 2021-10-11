@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
 
-        JokeService.init()
+        JokeService.initialize()
     }
 
     override fun onSupportNavigateUp(): Boolean {

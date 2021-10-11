@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.dissolutegames.dadjokeapp.R
 import com.dissolutegames.dadjokeapp.databinding.FragmentJokeBinding
-import com.dissolutegames.dadjokeapp.services.JokeService
 
 class JokeFragment : Fragment() {
     val args: JokeFragmentArgs by navArgs()
@@ -25,13 +24,14 @@ class JokeFragment : Fragment() {
         viewModel.jokeText.observe(viewLifecycleOwner, {
             binding.jokeText.text = it
         })
+        binding.starJokeButton.setOnClickListener {view -> viewModel.toggleStarred()}
 
 
         if (args.jokeId == getString(R.string.const_random_joke)) {
-            viewModel.init(null)
+            viewModel.initialize(null)
         }
         else {
-            viewModel.init(args.jokeId)
+            viewModel.initialize(args.jokeId)
         }
 
         return binding.root

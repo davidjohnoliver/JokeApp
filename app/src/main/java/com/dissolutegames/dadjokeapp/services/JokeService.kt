@@ -22,7 +22,11 @@ object JokeService {
         return client.get(randomJokeUrl)
     }
 
-    public fun init() {
+    public suspend fun getJoke(jokeId: String) : Joke {
+        return JokeStorageService.getJokeById(jokeId) ?: error("Joke not found") // TODO: fall back on API
+    }
+
+    public fun initialize() {
         val userAgentStr =
             "com.DissoluteGames.DadJokeApp/1 " + System.getProperty("http.agent")
         _client = HttpClient(Android) {
