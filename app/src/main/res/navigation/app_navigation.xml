@@ -14,8 +14,7 @@
             app:destination="@id/navigation_joke">
             <argument
                 android:name="jokeId"
-                app:argType="string"/>
-
+                app:argType="string" />
         </action>
     </fragment>
 
@@ -23,7 +22,15 @@
         android:id="@+id/navigation_starred"
         android:name="com.dissolutegames.dadjokeapp.ui.starred.StarredFragment"
         android:label="@string/title_starred"
-        tools:layout="@layout/fragment_starred" />
+        tools:layout="@layout/fragment_starred">
+        <action
+            android:id="@+id/nav_action_starred_to_joke"
+            app:destination="@id/navigation_joke">
+            <argument
+                android:name="jokeId"
+                app:argType="string" />
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_joke"
