@@ -25,12 +25,19 @@ class JokeViewModel : ViewModel() {
             _isLoading.apply {
                 value = true
             }
-            val joke = JokeService.getRandomJoke()
-            _jokeText.apply {
-                value = joke.Joke
-            }
-            _isLoading.apply {
-                value = false
+            try {
+
+                val joke = JokeService.getRandomJoke()
+                _jokeText.apply {
+                    value = joke.Joke
+                }
+                _isLoading.apply {
+                    value = false
+                }
+            } catch (e: Exception) {
+                _jokeText.apply {
+                    value = "Joke failed to load :("
+                }
             }
         }
     }
