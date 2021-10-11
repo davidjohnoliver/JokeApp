@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="green">#FF2D8633</color>
+    <color name="dark_green">#FF0B5710</color>
+    <color name="pink">#FFBA6493</color>
+    <color name="light_pink">#FFE2A9C8</color>
+
+<!--    TODO: remove these when dark theme is properly implemented    -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
