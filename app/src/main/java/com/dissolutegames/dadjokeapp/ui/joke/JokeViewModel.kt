@@ -15,11 +15,22 @@ class JokeViewModel : ViewModel() {
 
     val isLoading: LiveData<Boolean> = _isLoading
 
-    private val _jokeText = MutableLiveData<String>().apply {
+    private val _jokeTextQuestionless = MutableLiveData<String>().apply {
         value = ""
     }
+    val jokeTextQuestionless: LiveData<String> = _jokeTextQuestionless
 
-    val jokeText: LiveData<String> = _jokeText
+    private val _jokeTextQuestion = MutableLiveData<String>().apply {
+        value = ""
+    }
+    val jokeTextQuestion: LiveData<String> = _jokeTextQuestion
+
+    private val _jokeTextAnswer = MutableLiveData<String>().apply {
+        value = ""
+    }
+    val jokeTextAnswer: LiveData<String> = _jokeTextAnswer
+
+
     private val _joke = MutableLiveData<Joke?>().apply {
         value = null
     }
@@ -27,7 +38,6 @@ class JokeViewModel : ViewModel() {
     private val _isStarred = MutableLiveData<Boolean>().apply {
         value = false
     }
-
     val isStarred: LiveData<Boolean> = _isStarred
 
     fun initialize(jokeId: String?) {
@@ -42,11 +52,31 @@ class JokeViewModel : ViewModel() {
             }
             try {
 
-                val joke = if (jokeId == null)  JokeService.getRandomJoke() else JokeService.getJoke(jokeId)
+                val joke =
+                    if (jokeId == null) JokeService.getRandomJoke() else JokeService.getJoke(jokeId)
                 _joke.apply { value = joke }
-                _jokeText.apply {
-                    value = joke.Joke
+
+                val qIndex = joke.Joke.indexOf('?')
+                var questionless = ""
+                var question = ""
+                var answer = ""
+                if (qIndex == -1
+                    // p
+                    || qIndex == joke.Joke.length - 1
+                ) {
+                    questionless = joke.Joke
+                    question = ""
+                    answer = ""
+                } else {
+                    questionless = ""
+                    question = joke.Joke.substring(0..qIndex)
+                    answer = joke.Joke.substring(qIndex + 1).trim()
                 }
+                _jokeTextQuestionless.apply {
+                    value = questionless
+                }
+                _jokeTextQuestion.apply { value = question }
+                _jokeTextAnswer.apply { value = answer }
                 _isStarred.apply {
                     value = JokeStorageService.isStarred(joke)
                 }
@@ -54,7 +84,7 @@ class JokeViewModel : ViewModel() {
                     value = false
                 }
             } catch (e: Exception) {
-                _jokeText.apply {
+                _jokeTextQuestionless.apply {
                     value = "Joke failed to load :("
                 }
             }
@@ -69,8 +99,7 @@ class JokeViewModel : ViewModel() {
             _isStarred.apply {
                 value = false
             }
-        }
-        else {
+        } else {
             JokeStorageService.starJoke(joke)
             _isStarred.apply {
                 value = true

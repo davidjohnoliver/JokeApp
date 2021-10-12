@@ -21,24 +21,29 @@ class JokeFragment : Fragment() {
         val binding = FragmentJokeBinding.inflate(inflater, container, false)
         val viewModel = ViewModelProvider(this).get(JokeViewModel::class.java)
 
-        viewModel.jokeText.observe(viewLifecycleOwner, {
+        viewModel.jokeTextQuestionless.observe(viewLifecycleOwner, {
             binding.jokeText.text = it
         })
+        viewModel.jokeTextQuestion.observe(viewLifecycleOwner, {
+            binding.jokeTextQuestion.text = it
+        })
+        viewModel.jokeTextAnswer.observe(viewLifecycleOwner, {
+            binding.jokeTextAnswer.text = it
+        })
+
         viewModel.isStarred.observe(viewLifecycleOwner, {
             if (it) {
                 binding.isStarredIndicator.visibility = View.VISIBLE
-            }
-            else {
+            } else {
                 binding.isStarredIndicator.visibility = View.INVISIBLE
             }
         })
-        binding.starJokeButton.setOnClickListener {view -> viewModel.toggleStarred()}
+        binding.starJokeButton.setOnClickListener { view -> viewModel.toggleStarred() }
 
 
         if (args.jokeId == getString(R.string.const_random_joke)) {
             viewModel.initialize(null)
-        }
-        else {
+        } else {
             viewModel.initialize(args.jokeId)
         }
 
