@@ -24,6 +24,14 @@ class JokeFragment : Fragment() {
         viewModel.jokeText.observe(viewLifecycleOwner, {
             binding.jokeText.text = it
         })
+        viewModel.isStarred.observe(viewLifecycleOwner, {
+            if (it) {
+                binding.isStarredIndicator.visibility = View.VISIBLE
+            }
+            else {
+                binding.isStarredIndicator.visibility = View.INVISIBLE
+            }
+        })
         binding.starJokeButton.setOnClickListener {view -> viewModel.toggleStarred()}
 
 

@@ -28,6 +28,8 @@ class JokeViewModel : ViewModel() {
         value = false
     }
 
+    val isStarred: LiveData<Boolean> = _isStarred
+
     fun initialize(jokeId: String?) {
         if (_isInitialized) {
             return
