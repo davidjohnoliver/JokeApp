@@ -8,7 +8,7 @@ import com.dissolutegames.dadjokeapp.model.Joke
 
 class StarredListAdapter(
     private val inflater: LayoutInflater,
-    private val items: List<Joke>,
+    private val items: Array<Joke>,
     private val listener: (joke: Joke) -> Unit
 ) : RecyclerView.Adapter<StarredItemViewHolder>() {
 

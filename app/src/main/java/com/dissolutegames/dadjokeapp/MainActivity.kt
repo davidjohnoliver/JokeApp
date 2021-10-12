@@ -8,6 +8,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.dissolutegames.dadjokeapp.databinding.ActivityMainBinding
 import com.dissolutegames.dadjokeapp.services.JokeService
+import com.dissolutegames.dadjokeapp.services.JokeStorageService
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding.navView.setupWithNavController(navController)
 
         JokeService.initialize()
+        JokeStorageService.initialize(this)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun finish() {
         JokeService.close()
+        JokeStorageService.close()
         super.finish()
     }
 }
