@@ -1,5 +1,6 @@
 package com.dissolutegames.dadjokeapp.ui.joke
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -38,8 +39,19 @@ class JokeFragment : Fragment() {
                 binding.isStarredIndicator.visibility = View.INVISIBLE
             }
         })
-        binding.starJokeButton.setOnClickListener { view -> viewModel.toggleStarred() }
+        binding.starJokeButton.setOnClickListener { viewModel.toggleStarred() }
 
+        binding.shareButton.setOnClickListener {
+            val joke = viewModel.joke.value ?: return@setOnClickListener
+
+            val intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, joke.Joke)
+                type = "text/plain"
+            }
+            val chooserIntent = Intent.createChooser(intent, null)
+            startActivity(chooserIntent)
+        }
 
         if (args.jokeId == getString(R.string.const_random_joke)) {
             viewModel.initialize(null)

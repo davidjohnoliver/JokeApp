@@ -1,5 +1,6 @@
 package com.dissolutegames.dadjokeapp.ui.joke
 
+import android.content.Intent
 import androidx.lifecycle.*
 import com.dissolutegames.dadjokeapp.model.Joke
 import com.dissolutegames.dadjokeapp.services.JokeService
@@ -34,6 +35,8 @@ class JokeViewModel : ViewModel() {
     private val _joke = MutableLiveData<Joke?>().apply {
         value = null
     }
+
+    val joke: LiveData<Joke?> = _joke
 
     private val _isStarred = MutableLiveData<Boolean>().apply {
         value = false
