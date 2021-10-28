@@ -6,7 +6,7 @@
     app:startDestination="@id/navigation_random">
     <fragment
         android:id="@+id/navigation_random"
-        android:name="com.dissolutegames.dadjokeapp.ui.random.RandomFragment"
+        android:name="com.dissolutegames.jokeapp.ui.random.RandomFragment"
         android:label="@string/title_random"
         tools:layout="@layout/fragment_random">
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/navigation_starred"
-        android:name="com.dissolutegames.dadjokeapp.ui.starred.StarredFragment"
+        android:name="com.dissolutegames.jokeapp.ui.starred.StarredFragment"
         android:label="@string/title_starred"
         tools:layout="@layout/fragment_starred">
         <action
@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/navigation_joke"
-        android:name="com.dissolutegames.dadjokeapp.ui.joke.JokeFragment"
+        android:name="com.dissolutegames.jokeapp.ui.joke.JokeFragment"
         android:label="Joke"
         tools:layout="@layout/fragment_joke">
         <argument

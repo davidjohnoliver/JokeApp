@@ -1,7 +1,7 @@
-# DadJokeApp
+# JokeApp
 
-Get, save, and share dad jokes. A native Android app built with Kotlin and Jetpack.
+Get, save, and share cheesy jokes. A native Android app built with Kotlin and Jetpack.
 
 ![Screenshot of the app](./doc/assets/Joke_Screenshot.jpg)
 
- DadJokeApp uses the [icanhazdadjoke API](https://icanhazdadjoke.com/api).
+ JokeApp uses the [icanhazdadjoke API](https://icanhazdadjoke.com/api).

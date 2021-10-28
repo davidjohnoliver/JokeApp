@@ -1,4 +1,4 @@
-package com.dissolutegames.dadjokeapp.ui.random
+package com.dissolutegames.jokeapp.ui.random
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.dissolutegames.dadjokeapp.R
-import com.dissolutegames.dadjokeapp.databinding.FragmentRandomBinding
+import com.dissolutegames.jokeapp.R
+import com.dissolutegames.jokeapp.databinding.FragmentRandomBinding
 
 class RandomFragment : Fragment() {
     override fun onCreateView(

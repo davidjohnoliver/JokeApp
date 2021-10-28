@@ -1,4 +1,4 @@
-package com.dissolutegames.dadjokeapp
+package com.dissolutegames.jokeapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,9 +6,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.dissolutegames.dadjokeapp.databinding.ActivityMainBinding
-import com.dissolutegames.dadjokeapp.services.JokeService
-import com.dissolutegames.dadjokeapp.services.JokeStorageService
+import com.dissolutegames.jokeapp.databinding.ActivityMainBinding
+import com.dissolutegames.jokeapp.services.JokeService
+import com.dissolutegames.jokeapp.services.JokeStorageService
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

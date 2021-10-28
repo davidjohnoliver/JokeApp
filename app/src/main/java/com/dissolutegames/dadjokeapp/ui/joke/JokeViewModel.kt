@@ -1,10 +1,10 @@
-package com.dissolutegames.dadjokeapp.ui.joke
+package com.dissolutegames.jokeapp.ui.joke
 
 import android.content.Intent
 import androidx.lifecycle.*
-import com.dissolutegames.dadjokeapp.model.Joke
-import com.dissolutegames.dadjokeapp.services.JokeService
-import com.dissolutegames.dadjokeapp.services.JokeStorageService
+import com.dissolutegames.jokeapp.model.Joke
+import com.dissolutegames.jokeapp.services.JokeService
+import com.dissolutegames.jokeapp.services.JokeStorageService
 import kotlinx.coroutines.launch
 
 class JokeViewModel : ViewModel() {

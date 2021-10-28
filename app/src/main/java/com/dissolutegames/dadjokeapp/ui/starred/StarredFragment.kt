@@ -1,4 +1,4 @@
-package com.dissolutegames.dadjokeapp.ui.starred
+package com.dissolutegames.jokeapp.ui.starred
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dissolutegames.dadjokeapp.databinding.FragmentStarredBinding
-import com.dissolutegames.dadjokeapp.model.Joke
-import com.dissolutegames.dadjokeapp.services.JokeStorageService
+import com.dissolutegames.jokeapp.databinding.FragmentStarredBinding
+import com.dissolutegames.jokeapp.model.Joke
+import com.dissolutegames.jokeapp.services.JokeStorageService
 
 class StarredFragment : Fragment() {
 

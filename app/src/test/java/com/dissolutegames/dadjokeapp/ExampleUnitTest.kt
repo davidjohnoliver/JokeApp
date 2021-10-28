@@ -1,4 +1,4 @@
-package com.dissolutegames.dadjokeapp
+package com.dissolutegames.jokeapp
 
 import org.junit.Test
 

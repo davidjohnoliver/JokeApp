@@ -1,6 +1,6 @@
-package com.dissolutegames.dadjokeapp.services
+package com.dissolutegames.jokeapp.services
 
-import com.dissolutegames.dadjokeapp.model.Joke
+import com.dissolutegames.jokeapp.model.Joke
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.features.*
@@ -28,7 +28,7 @@ object JokeService {
 
     public fun initialize() {
         val userAgentStr =
-            "com.DissoluteGames.DadJokeApp/1 " + System.getProperty("http.agent")
+            "com.dissolutegames.jokeapp/1 " + System.getProperty("http.agent")
         _client = HttpClient(Android) {
             install(JsonFeature) {
                 serializer = KotlinxSerializer(kotlinx.serialization.json.Json {

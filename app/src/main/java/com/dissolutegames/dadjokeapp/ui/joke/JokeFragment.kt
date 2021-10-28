@@ -1,4 +1,4 @@
-package com.dissolutegames.dadjokeapp.ui.joke
+package com.dissolutegames.jokeapp.ui.joke
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import com.dissolutegames.dadjokeapp.R
-import com.dissolutegames.dadjokeapp.databinding.FragmentJokeBinding
+import com.dissolutegames.jokeapp.R
+import com.dissolutegames.jokeapp.databinding.FragmentJokeBinding
 
 class JokeFragment : Fragment() {
     val args: JokeFragmentArgs by navArgs()

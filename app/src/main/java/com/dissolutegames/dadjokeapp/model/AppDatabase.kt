@@ -1,4 +1,4 @@
-package com.dissolutegames.dadjokeapp.model
+package com.dissolutegames.jokeapp.model
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

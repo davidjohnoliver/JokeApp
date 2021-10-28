@@ -1,7 +1,7 @@
-package com.dissolutegames.dadjokeapp.ui.starred
+package com.dissolutegames.jokeapp.ui.starred
 
 import androidx.recyclerview.widget.RecyclerView
-import com.dissolutegames.dadjokeapp.databinding.ItemStarredBinding
+import com.dissolutegames.jokeapp.databinding.ItemStarredBinding
 
 class StarredItemViewHolder(val binding: ItemStarredBinding) : RecyclerView.ViewHolder(binding.root) {
 

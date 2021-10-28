@@ -1,10 +1,10 @@
-package com.dissolutegames.dadjokeapp.ui.starred
+package com.dissolutegames.jokeapp.ui.starred
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.dissolutegames.dadjokeapp.databinding.ItemStarredBinding
-import com.dissolutegames.dadjokeapp.model.Joke
+import com.dissolutegames.jokeapp.databinding.ItemStarredBinding
+import com.dissolutegames.jokeapp.model.Joke
 
 class StarredListAdapter(
     private val inflater: LayoutInflater,

@@ -1,9 +1,9 @@
-package com.dissolutegames.dadjokeapp.services
+package com.dissolutegames.jokeapp.services
 
 import android.content.Context
 import androidx.room.Room
-import com.dissolutegames.dadjokeapp.model.AppDatabase
-import com.dissolutegames.dadjokeapp.model.Joke
+import com.dissolutegames.jokeapp.model.AppDatabase
+import com.dissolutegames.jokeapp.model.Joke
 
 object JokeStorageService {
     private var _appDatabase: AppDatabase? = null
