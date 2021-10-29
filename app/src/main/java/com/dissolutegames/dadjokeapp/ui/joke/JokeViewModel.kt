@@ -49,6 +49,10 @@ class JokeViewModel : ViewModel() {
         }
         _isInitialized = true
 
+        loadJoke(jokeId)
+    }
+
+    private fun loadJoke(jokeId: String?) {
         viewModelScope.launch {
             _isLoading.apply {
                 value = true
@@ -108,5 +112,9 @@ class JokeViewModel : ViewModel() {
                 value = true
             }
         }
+    }
+
+    fun refresh() {
+        loadJoke(null)
     }
 }

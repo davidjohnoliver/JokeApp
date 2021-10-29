@@ -53,6 +53,8 @@ class JokeFragment : Fragment() {
             startActivity(chooserIntent)
         }
 
+        binding.refreshButton.setOnClickListener { viewModel.refresh()}
+
         if (args.jokeId == getString(R.string.const_random_joke)) {
             viewModel.initialize(null)
         } else {
